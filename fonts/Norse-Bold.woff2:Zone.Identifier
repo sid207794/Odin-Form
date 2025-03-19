@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/1a24f34d-8af2-48cf-b5af-3a4f84a9db7b/Norse-Bold.woff2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20250319%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20250319T184042Z&X-Amz-Expires=86400&X-Amz-Signature=cc029ca67b5fcc55960ec698d457b2a12eb9bca2e7aaf0b686613d82b637a5c8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22Norse-Bold.woff2%22&response-content-type=font%2Fwoff2&x-id=GetObject
