@@ -1,24 +1,63 @@
+@font-face {
+    font-family: "Norse-Bold";
+    src: url("./fonts/Norse-Bold.woff2") format("woff2");
+}
+
 :root.light {
     --bg-img: url("./images/lakeside-day.png");
-    --bg-color: #124868;
+    --bg-color-bottom: #124868;
+    --bg-color-top: #0b498b;
+    --shadow-right-box: #00000099;
+    --bg-main-bottom: #4a75bb30;
+    --bg-main-top: #91b9c750;
+    --shadow-logo: #00a465;
+    --invert-logo: invert(100%);
+    --color-logo: white;
+    --shadow-text: black;
 }
 
 :root.dark {
     --bg-img: url("./images/lakeside-night.png");
-    --bg-color: #2b2241;
+    --bg-color-bottom: #2b2241;
+    --bg-color-top: #1c1941;
+    --shadow-right-box: #00000099;
+    --bg-main-bottom: #ed6c4830;
+    --bg-main-top: #8a608150;
+    --shadow-logo: #8a6081;
+    --invert-logo: invert(0%);
+    --color-logo: rgb(10, 10, 10);
+    --shadow-text: white;
+    --font-weight-logo: 900;
 }
 
 @media (prefers-color-scheme: dark) {
     :root.dark {
         --bg-img: url("./images/lakeside-night.png");
-        --bg-color: #2b2241;
+        --bg-color-bottom: #2b2241;
+        --bg-color-top: #1c1941;
+        --shadow-right-box: #00000099;
+        --bg-main-bottom: #ed6c4830;
+        --bg-main-top: #8a608150;
+        --shadow-logo: #8a6081;
+        --invert-logo: invert(0%);
+        --color-logo: rgb(10, 10, 10);
+        --shadow-text: white;
+        --font-weight-logo: 900;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root.light {
         --bg-img: url("./images/lakeside-day.png");
-        --bg-color: #124868;
+        --bg-color-bottom: #124868;
+        --bg-color-top: #0b498b;
+        --shadow-right-box: #00000099;
+        --bg-main-bottom: #4a75bb30;
+        --bg-main-top: #91b9c750;
+        --shadow-logo: #00a465;
+        --invert-logo: invert(100%);
+        --color-logo: white;
+        --shadow-text: black;
     }
 }
 
@@ -29,6 +68,8 @@ body {
 }
 
 #left {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 39vw;
     background-image: var(--bg-img);
@@ -36,7 +77,56 @@ body {
     background-position-x: -210px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    background-color: #00000040;
+    backdrop-filter: blur(3px);
+    top: 70px;
+    color: var(--color-logo);
+    font-family: "Norse-Bold", serif;
+    font-size: 67px;
+    font-weight: var(--font-weight-logo);
+    text-shadow: 0px 0px 1px var(--shadow-text);
+    gap: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 55px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo #triquetra {
+    filter: 
+            var(--invert-logo)
+            drop-shadow(0px 0px 1px var(--shadow-logo))
+            drop-shadow(0px 0px 1px var(--shadow-logo))
+            drop-shadow(0px 0px 1px var(--shadow-logo))
+            drop-shadow(0px 0px 1px var(--shadow-logo))
+            drop-shadow(0px 0px 1px var(--shadow-logo))
+            drop-shadow(0px 0px 1px var(--shadow-logo));
+}
+
 #right {
+    display: flex;
+    flex-direction: column;
     width: 61vw;
-    background-color: var(--bg-color);
+    background: linear-gradient(to top, var(--bg-color-bottom), var(--bg-color-top));
+    box-shadow: -8px 0 4px var(--shadow-right-box);
+}
+
+.head {
+    height: 34vh;
+}
+
+.main {
+    height: 32vh;
+    background: linear-gradient(to top, var(--bg-main-bottom), var(--bg-main-top));
+    margin: 0 15px;
+    box-shadow: -8px 8px 4px var(--shadow-right-box);
+}
+
+.foot {
+    height: 34vh;
 }
