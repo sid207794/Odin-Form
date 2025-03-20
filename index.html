@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="./images/lakeside-day.webp" as="image">
+    <link rel="preload" href="./images/lakeside-night.webp" as="image">
+    <link rel="preload" href="./images/night-mode.png" as="image">
+    <link rel="preload" href="./images/triquetra.png" as="image">
     <script src="script.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +18,57 @@
     <div id="left">
         <div class="logo">
             <img id="triquetra" src="./images/triquetra.png" alt="Triquetra symbol" height="100px" width="100px">
-            <span>MJÖLNIR TRAVELS</span>
+            <span class="logoText">MJÖLNIR TRAVELS</span>
         </div>
     </div>
     <div id="right">
         <div class="head">
-            <button class="theme">Theme</button>
+            <button class="theme"><div><img src="./images/night-mode.png" alt="dark mode/light mode" height="40px" width="40px" loading="eager"></div></button>
+            <div class="container">
+                <span class="paraOne">You are here because you wish to travel to the lands of Vikings, to the home of Odin himself. 
+                    Well, your search is over now. Sign up now to get an experience that will make sure to bring you back 
+                    to us everytime you ever wish to travel, just like Mjölnir returns to Thor.</span>
+                <span class="paraTwo">Sign up to see if you are worthy!</span>
+            </div>
         </div>
         <div class="main">
-
+            <div class="form">
+                <form>
+                    <fieldset>
+                        <legend>Test your might!</legend>
+                        <div class="rowOne">
+                            <label for="first-name">
+                                <p>FIRST NAME</p>
+                                <input type="text" id="first-name" name="first-name" placeholder="Thor" required>
+                            </label>
+                            <label for="last-name">
+                                <p>LAST NAME</p>
+                                <input type="text" id="last-name" name="last-name" placeholder="Odinson" required>
+                            </label>
+                        </div>
+                        <div class="rowTwo">
+                            <label for="email">
+                                <p>EMAIL</p>
+                                <input type="email" id="email" name="email" placeholder="XYZ@123.com" required>
+                            </label>
+                            <label for="phone">
+                                <p>PHONE NUMBER</p>
+                                <input type="tel" id="phone" name="phone" placeholder="+XX-XXX-XXX-XXXX" minlength="10" maxlength="13" required>
+                            </label>
+                        </div>
+                        <div class="rowThree">
+                            <label for="pass">
+                                <p>PASSWORD</p>
+                                <input type="password" id="pass" name="password" placeholder="*******" minlength="8" maxlength="16" required>
+                            </label>
+                            <label for="confirm-pass">
+                                <p>CONFIRM PASSWORD</p>
+                                <input type="password" id="confirm-pass" name="confirm-password" placeholder="*******" minlength="8" maxlength="16" required>
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
         <div class="foot">
 
