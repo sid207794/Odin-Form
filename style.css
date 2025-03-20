@@ -4,20 +4,28 @@
 }
 
 :root.light {
-    --bg-img: url("./images/lakeside-day.png");
+    --bg-img: url("./images/lakeside-day.webp");
     --bg-color-bottom: #124868;
     --bg-color-top: #0b498b;
     --shadow-right-box: #00000099;
     --bg-main-bottom: #4a75bb30;
     --bg-main-top: #91b9c750;
-    --shadow-logo: #00a465;
+    --shadow-logo: #0099a4;
     --invert-logo: invert(100%);
     --color-logo: white;
     --shadow-text: black;
+    --bg-color-theme-button: #00000050;
+    --bg-color-theme-button-hover: #ffffff50;
+    --invert-theme-img: invert(100%);
+    --shadow-theme-button: #00000099;
+    --bg-color-text: #ffffff50;
+    --bg-color-input: #dddddd;
+    --color-input-text: black;
+    --border-color-input-hover: aqua;
 }
 
 :root.dark {
-    --bg-img: url("./images/lakeside-night.png");
+    --bg-img: url("./images/lakeside-night.webp");
     --bg-color-bottom: #2b2241;
     --bg-color-top: #1c1941;
     --shadow-right-box: #00000099;
@@ -25,14 +33,21 @@
     --bg-main-top: #8a608150;
     --shadow-logo: #8a6081;
     --invert-logo: invert(0%);
-    --color-logo: rgb(10, 10, 10);
-    --shadow-text: white;
+    --color-logo: #bbbbbb;
+    --shadow-text: black;
     --font-weight-logo: 900;
+    --bg-color-theme-button: #ffffff50;
+    --bg-color-theme-button-hover: #00000050;
+    --shadow-theme-button: #00000099;
+    --bg-color-text: #00000050;
+    --bg-color-input: #00000050;
+    --color-input-text: #bbbbbb;
+    --border-color-input-hover: aqua;
 }
 
 @media (prefers-color-scheme: dark) {
     :root.dark {
-        --bg-img: url("./images/lakeside-night.png");
+        --bg-img: url("./images/lakeside-night.webp");
         --bg-color-bottom: #2b2241;
         --bg-color-top: #1c1941;
         --shadow-right-box: #00000099;
@@ -40,24 +55,39 @@
         --bg-main-top: #8a608150;
         --shadow-logo: #8a6081;
         --invert-logo: invert(0%);
-        --color-logo: rgb(10, 10, 10);
-        --shadow-text: white;
+        --color-logo: #bbbbbb;
+        --shadow-text: black;
         --font-weight-logo: 900;
+        --bg-color-theme-button: #ffffff50;
+        --bg-color-theme-button-hover: #00000050;
+        --shadow-theme-button: #00000099;
+        --bg-color-text: #00000050;
+        --bg-color-input: #00000050;
+        --color-input-text: #bbbbbb;
+        --border-color-input-hover: aqua;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root.light {
-        --bg-img: url("./images/lakeside-day.png");
+        --bg-img: url("./images/lakeside-day.webp");
         --bg-color-bottom: #124868;
         --bg-color-top: #0b498b;
         --shadow-right-box: #00000099;
         --bg-main-bottom: #4a75bb30;
         --bg-main-top: #91b9c750;
-        --shadow-logo: #00a465;
+        --shadow-logo: #0099a4;
         --invert-logo: invert(100%);
         --color-logo: white;
         --shadow-text: black;
+        --bg-color-theme-button: #00000050;
+        --bg-color-theme-button-hover: #ffffff50;
+        --invert-theme-img: invert(100%);
+        --shadow-theme-button: #00000099;
+        --bg-color-text: #ffffff50;
+        --bg-color-input: #dddddd;
+        --color-input-text: black;
+        --border-color-input-hover: aqua;
     }
 }
 
@@ -70,11 +100,12 @@ body {
 #left {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     width: 39vw;
     background-image: var(--bg-img);
     background-size: cover;
     background-position-x: -210px;
+    background-attachment: fixed;
+    transition-duration: 0.6s;
 }
 
 .logo {
@@ -89,12 +120,16 @@ body {
     font-size: 67px;
     font-weight: var(--font-weight-logo);
     text-shadow: 0px 0px 1px var(--shadow-text);
-    gap: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 55px;
     overflow: hidden;
     white-space: nowrap;
+    transition: 0.6s ease-in-out;
+}
+
+.logo .logoText {
+    transition: 0.6s;
 }
 
 .logo #triquetra {
@@ -106,6 +141,8 @@ body {
             drop-shadow(0px 0px 1px var(--shadow-logo))
             drop-shadow(0px 0px 1px var(--shadow-logo))
             drop-shadow(0px 0px 1px var(--shadow-logo));
+    transition-duration: 0.6s;
+    padding-right: 25px;
 }
 
 #right {
@@ -114,17 +151,182 @@ body {
     width: 61vw;
     background: linear-gradient(to top, var(--bg-color-bottom), var(--bg-color-top));
     box-shadow: -8px 0 4px var(--shadow-right-box);
+    transition-duration: 0.6s;
 }
 
 .head {
+    display: flex;
+    flex-direction: column;
     height: 34vh;
+    flex: 1;
+    flex-shrink: 0;
+}
+
+.head .container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 15px;
+    background-color: var(--bg-color-text);
+    transition-duration: 0.6s;
+    flex: 1;
+    flex-shrink: 0;
+}
+
+.head .theme {
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 845px;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: var(--bg-color-theme-button);
+    box-shadow: -4px 4px 2px var(--shadow-theme-button);
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.head .theme img {
+    position: relative;
+    top: 2.3px;
+    left: -2px;
+    filter: var(--invert-theme-img);
+}
+
+.head .theme div:hover {
+    filter: invert(100%);
+}
+
+.head .theme:hover {
+    background-color: var(--bg-color-theme-button-hover);
+}
+
+.head .theme:active {
+    box-shadow: -1px 1px 2px var(--shadow-theme-button);
+}
+
+.container .paraOne, 
+.paraTwo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--color-logo);
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    text-align: justify;
 }
 
 .main {
+    position: sticky;
     height: 32vh;
     background: linear-gradient(to top, var(--bg-main-bottom), var(--bg-main-top));
     margin: 0 15px;
     box-shadow: -8px 8px 4px var(--shadow-right-box);
+    flex: 1;
+    flex-shrink: 0;
+}
+
+.main .form {
+    display: flex;
+    overflow: hidden;
+    margin: 4px;
+    margin-top: 5.5px;
+    background-color: var(--bg-color-text);
+    transition-duration: 0.6s;
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-bottom: 11px;
+}
+
+.main .form fieldset {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--color-logo);
+    padding-right: 200px;
+    
+}
+
+.main .form .rowOne {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 160px;
+}
+
+.main .form label p {
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.main .form .rowTwo {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 160px;
+}
+
+.main .form .rowThree {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 160px;
+}
+
+.main .form input {
+    height: 25px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: var(--bg-color-input);
+    color: var(--color-input-text);
+    border: solid 1px var(--bg-color-theme-button);
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .form input[placeholder] {
+    font-weight: normal;
+}
+
+.main .form input:focus {
+    box-shadow: -8px 8px 4px var(--shadow-right-box);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.main .form input:not(:focus) {
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.main .form input:required:placeholder-shown {
+    border: dashed 1px;
+    transition: border 0.6s ease-in-out;
+}
+
+.main .form input:required:not(:placeholder-shown) {
+    border: solid 1px var(--bg-color-theme-button);
+    transition: border 0.6s ease-in-out;
+}
+
+.main .form input#email:invalid:not(:placeholder-shown),
+.main .form input#phone:invalid:not(:placeholder-shown),
+.main .form input#pass:invalid:not(:placeholder-shown),
+.main .form input#confirm-pass:invalid:not(:placeholder-shown) {
+    border: solid 1.5px red;
+}
+
+.main .form input#email:valid:not(:placeholder-shown),
+.main .form input#phone:valid:not(:placeholder-shown),
+.main .form input#pass:valid:not(:placeholder-shown),
+.main .form input#confirm-pass:valid:not(:placeholder-shown) {
+    border-color: green;
+}
+
+.main .form input:hover {
+    border: solid 1px var(--border-color-input-hover) !important;
 }
 
 .foot {
