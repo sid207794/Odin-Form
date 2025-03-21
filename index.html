@@ -40,30 +40,36 @@
                             <label for="first-name">
                                 <p>FIRST NAME</p>
                                 <input type="text" id="first-name" name="first-name" placeholder="Thor" required>
+                                <span></span>
                             </label>
                             <label for="last-name">
                                 <p>LAST NAME</p>
                                 <input type="text" id="last-name" name="last-name" placeholder="Odinson" required>
+                                <span></span>
                             </label>
                         </div>
                         <div class="rowTwo">
                             <label for="email">
                                 <p>EMAIL</p>
                                 <input type="email" id="email" name="email" placeholder="XYZ@123.com" required>
+                                <span></span>
                             </label>
                             <label for="phone">
                                 <p>PHONE NUMBER</p>
                                 <input type="tel" id="phone" name="phone" placeholder="+XX-XXX-XXX-XXXX" minlength="10" maxlength="13" required>
+                                <span></span>
                             </label>
                         </div>
                         <div class="rowThree">
                             <label for="pass">
                                 <p>PASSWORD</p>
                                 <input type="password" id="pass" name="password" placeholder="*******" minlength="8" maxlength="16" required>
+                                <span></span>
                             </label>
                             <label for="confirm-pass">
                                 <p>CONFIRM PASSWORD</p>
                                 <input type="password" id="confirm-pass" name="confirm-password" placeholder="*******" minlength="8" maxlength="16" required>
+                                <span></span>
                             </label>
                         </div>
                     </fieldset>
@@ -71,7 +77,9 @@
             </div>
         </div>
         <div class="foot">
-
+            <label for="terms"><input type="checkbox" id="terms" name="terms-checkbox"><span>I agree to the <a href="#">Terms and Conditions</a> upon creating this account.</span></label>
+            <button class="createAccount">Create Account</button>
+            <span>Already have an account? <a href="#">Log in</a></span>
         </div>
     </div>
 </body>
