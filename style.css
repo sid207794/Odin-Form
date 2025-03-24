@@ -111,7 +111,7 @@ body {
     width: 39vw;
     background-image: var(--bg-img);
     background-size: cover;
-    background-position-x: -210px;
+    background-position-x: -13.8vw; /*-210px*/
     background-attachment: fixed;
     transition: background-image 0.6s ease-in-out;
 }
@@ -122,15 +122,15 @@ body {
     position: sticky;
     background-color: #00000040;
     backdrop-filter: blur(3px);
-    top: 70px;
+    top: 11vh; /*70px*/
     color: var(--color-logo);
     font-family: "Norse-Bold", serif;
-    font-size: 67px;
+    font-size: calc(4.15rem + 0.5vh); /*67px*/
     font-weight: var(--font-weight-logo);
-    text-shadow: 0px 0px 1px var(--shadow-text);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 55px;
+    text-shadow: 0 0 0.0625rem var(--shadow-text); /*0 0 1px*/
+    padding-top: 1.225vh; /*10px*/
+    padding-bottom: 1.225vh; /*10px*/
+    padding-left: 3.2vw; /*55px*/
     overflow: hidden;
     white-space: nowrap;
     transition: color 0.6s ease-in-out, font-weight 0.6s ease-in-out, text-shadow 0.6s ease-in-out;
@@ -143,25 +143,25 @@ body {
 .logo #triquetra {
     filter: 
             var(--invert-logo)
-            drop-shadow(0px 0px 1px var(--shadow-logo))
-            drop-shadow(0px 0px 1px var(--shadow-logo))
-            drop-shadow(0px 0px 1px var(--shadow-logo))
-            drop-shadow(0px 0px 1px var(--shadow-logo))
-            drop-shadow(0px 0px 1px var(--shadow-logo))
-            drop-shadow(0px 0px 1px var(--shadow-logo));
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--shadow-logo)); /*0 0 1px*/
     transition: filter 0.6s ease-in-out;
-    padding-right: 25px;
+    padding-right: 1.627vw; /*25px*/
 }
 
 .logo #triquetra:hover {
     filter: 
             var(--invert-logo)
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover))
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover))
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover))
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover))
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover))
-            drop-shadow(0px 0px 1px var(--color-drop-shadow-hover));
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)) /*0 0 1px*/
+            drop-shadow(0px 0px 0.0625rem var(--color-drop-shadow-hover)); /*0 0 1px*/
     transition: filter 0.6s ease-in-out;
 }
 
@@ -170,17 +170,17 @@ body {
     flex-direction: column;
     width: 61vw;
     background: linear-gradient(to top, var(--bg-color-bottom), var(--bg-color-top));
-    box-shadow: -8px 0 4px var(--shadow-right-box);
-    gap: 15px;
+    box-shadow: -0.5rem 0 0.25rem var(--shadow-right-box); /*-8px 0 4px*/
+    gap: 2vh; /*15px*/
 }
 
 .head {
     display: flex;
     flex-direction: column;
     height: 34vh;
-    flex-shrink: 0;
     overflow: hidden;
-    padding-bottom: 10px;
+    flex-shrink: 0;
+    padding-bottom: 1.5vh; /*10px*/
 }
 
 .head .container {
@@ -189,7 +189,6 @@ body {
     margin: 15px;
     background-color: var(--bg-color-text);
     transition: background-color 0.6s ease-in-out;
-    flex-shrink: 0;
 }
 
 .head .theme {
